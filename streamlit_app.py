@@ -23,16 +23,18 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
 
 streamlit.header("Fruityvice Fruit Advice!")
-fruits_selected_next = streamlit.multiselect("What fruit would you like information about?", list(my_fruit_list.index),['Orange','Banana'])
-streamlit.write('The user enterd ', fruits_selected_next)
-fruits_to_show_next = my_fruit_list.loc[fruits_selected_next]
-streamlit.dataframe(fruits_to_show_next)
-
-
-
+try:
+  fruits_selected_next = streamlit.multiselect("What fruit would you like information about?")
+  if not fruit_choice
+  streamlit.error("Please select a fruit to get information.")
+else:
+  streamlit.write('The user enterd ', fruits_selected_next)
+  fruits_to_show_next = my_fruit_list.loc[fruits_selected_next]
+  streamlit.dataframe(fruits_to_show_next)
+except URLEroor as e:
+streamlit.error()
 
 streamlit.stop()
-
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
