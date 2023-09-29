@@ -19,10 +19,10 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
 
 streamlit.header("Fruityvice Fruit Advice!")
-fruits_selected2 = streamlit.multiselect("What fruit would you like information about?", list(my_fruit_list.index),'Orange')
-streamlit.write('The user entered ', fruits_selected2)
-fruits_to_show2 = my_fruit_list.loc[fruits_selected2]
-streamlit.dataframe(fruits_to_show2)
+fruits_selected_next = streamlit.multiselect("What fruit would you like information about?", list(my_fruit_list.index),'Orange')
+streamlit.write('The user entered ', fruits_selected_next)
+fruits_to_show_next = my_fruit_list.loc[fruits_selected_next]
+streamlit.dataframe(fruits_to_show_next)
 
 
 import requests
